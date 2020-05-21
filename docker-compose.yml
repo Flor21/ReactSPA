@@ -1,0 +1,15 @@
+version: "3.8"
+
+services: 
+  node:
+    image: node:lts
+    container_name: "reactSPA"
+    working_dir: '/home/node/app'
+    user: "node"
+    volumes:
+      - ./app/test-app:/home/node/app
+    ports:
+      - "3000:3000"
+    command: "yarn start"
+    stdin_open: true
+    tty: true
