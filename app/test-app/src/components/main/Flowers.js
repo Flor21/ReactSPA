@@ -48,7 +48,7 @@ export default class Flowers extends React.Component {
     render(){
         let filterFlower = listflowers.filter(
             (flower) => {
-                return flower.name.indexOf(this.state.ff) !== -1;
+                return flower.name.toLowerCase().indexOf(this.state.ff.toLowerCase()) !== -1;
             }
         );
         return(
