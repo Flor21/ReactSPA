@@ -1,0 +1,10 @@
+[
+    {"id":1, "name":"Rose", "price":"12$", "stock":50},
+    {"id":2, "name":"Sunflower", "price":"11$", "stock":40},
+    {"id":3, "name":"Lily", "price":"12$", "stock":10},
+    {"id":4, "name":"Lavender", "price":"15.20$", "stock":50},
+    {"id":5, "name":"Plumeria", "price":"10.20$", "stock":40},
+    {"id":6, "name":"Jasmine", "price":"20$", "stock":50},
+    {"id":7, "name":"Pansy", "price":"25$", "stock":30},
+    {"id":8, "name":"Zinnia", "price":"12$", "stock":10}
+]

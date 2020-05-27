@@ -1,87 +1,113 @@
-import React from 'react';
-import Header from '../Header';
-import Flower from './Flower';
-import Table from 'react-bootstrap/Table';
-import InputGroup from 'react-bootstrap/InputGroup';
-import FormControl from 'react-bootstrap/FormControl';
-import Button from 'react-bootstrap/Button';
-
-
-const listflowers= [
-    {id:'1', name:'Rose', price:'12$', stock:'50'},
-    {id:'2', name:'Sunflower', price:'11$', stock:'40'},
-    {id:'3', name:'Lily', price:'12$', stock:'10'},
-    {id:'4', name:'Lavender', price:'15.20$', stock:'50'},
-    {id:'5', name:'Plumeria', price:'10.20$', stock:'40'},
-    {id:'6', name:'Jasmine', price:'20$', stock:'50'},
-    {id:'7', name:'Pansy', price:'25$', stock:'30'},
-    {id:'8', name:'Zinnia', price:'12$', stock:'10'}
-];
+import React from "react";
+import Header from "../Header";
+import Flower from "./Flower";
+import Table from "react-bootstrap/Table";
+import InputGroup from "react-bootstrap/InputGroup";
+import FormControl from "react-bootstrap/FormControl";
+import Button from "react-bootstrap/Button";
+import listflowers from "../listFlowers.json";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import FlowerForm from "./FlowerForm";
 
 export default class Flowers extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      flowers: listflowers,
+      new: true,
+    };
+  }
 
-    constructor(props) {
-        super(props);
-        this.state = ({
-            ff: ''
-        });
-    }
+  updateSearch(event) {
+    this.setState({ flowers: event.target.value });
+  }
 
-    updateSearch(event) {
-       this.setState({ff: event.target.value});
-    }
+  delete(id) {
+    const newFlower = this.state.flowers.filter((flowerr) => flowerr.id !== id);
+    this.setState({ flowers: newFlower });
+  }
 
-    handleSubmit() {
-        console.log(this.state.ff) ; 
-        /*let filterFlower = listflowers.filter(
+  addFlower = (name, price, stock) => {
+    const newFlower = {
+      name: name,
+      price: price,
+      stock: stock,
+      id: this.state.flowers.length + 1,
+    };
+    this.setState({
+      flowers: [...this.state.flowers, newFlower],
+    });
+  };
+
+  newForm() {
+    this.setState({ new: false });
+  }
+
+  render() {
+    /* let filterFlower = this.state.flowers.filter(
             (flower) => {
-                return flower.name.indexOf(this.state.ff) !== -1;
+                return flower.name.toLowerCase().indexOf(this.state.flowers.toLowerCase()) !== -1;
             }
-        );
-        console.log(filterFlower); 
-        
-            {filterFlower.map((flower)=>{
-                return <Flower flower={flower} key={flower.id}/>
-            })}*/
-    }
-
-    render(){
-        let filterFlower = listflowers.filter(
-            (flower) => {
-                return flower.name.toLowerCase().indexOf(this.state.ff.toLowerCase()) !== -1;
-            }
-        );
-        return(
-            <div className="flowers">
-                <Header />    
-                <br></br>  
-                <div className="search"  >
-                    <InputGroup className="mb-3" value={this.state.ff} >
-                        <FormControl
-                            placeholder="Name flower"
-                            aria-label="Recipient's username"
-                            aria-describedby="basic-addon2"
-                            onChange={this.updateSearch.bind(this)}
-                        />
-                        <InputGroup.Append >
-                            <Button className="btt"  variant="outline-info" onClick={this.handleSubmit.bind(this)}  >Search</Button>
-                        </InputGroup.Append>
+        );*/
+    return (
+      <div className="flowers">
+        <Header />
+        <br></br>
+        {this.state.new ? (
+          <div className="searchAdd">
+            <Container>
+              <Row className="justify-content-md-center">
+                <Col>
+                  <Button
+                    variant="outline-info"
+                    onClick={this.newForm.bind(this)}
+                  >
+                    Add
+                  </Button>
+                </Col>
+                <Col md="auto"></Col>
+                <Col md="auto">
+                  <div>
+                    <InputGroup className="mb-3" value={this.state.flowers}>
+                      <FormControl
+                        placeholder="Search name"
+                        aria-label="Recipient's username"
+                        aria-describedby="basic-addon2"
+                        onChange={this.updateSearch.bind(this)}
+                      />
                     </InputGroup>
-                </div>
-                <br></br> 
-                <Table responsive="sm">
-                    <thead>
-                        <tr>
-                            <th >Name</th>
-                            <th >Price</th>
-                            <th >Stock</th>
-                        </tr>
-                    </thead>
-                    {filterFlower.map((flower)=>{
-                        return <Flower flower={flower} key={flower.id}/>
-                    })}
-                </Table>
-            </div>
-        );
-    }
+                  </div>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+        ) : (
+          <FlowerForm addFlower={this.addFlower} />
+        )}
+        <br></br>
+        <Table responsive="sm">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Price</th>
+              <th>Stock</th>
+              <th></th>
+            </tr>
+          </thead>
+          {this.state.flowers.map((flower) => {
+            return (
+              <Flower
+                flower={flower}
+                key={flower.id}
+                delete={this.delete.bind(this)}
+              />
+            );
+          })}
+          {console.log(this.state.flowers)}
+        </Table>
+      </div>
+    );
+  }
 }
