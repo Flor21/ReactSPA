@@ -12,17 +12,62 @@ export default class Contact extends React.Component {
     super(props);
     this.state = {
       surname: "",
-      namE: "",
+      name: "",
       phone: "",
       email: "",
       msj: "",
       showComponent: false,
+      alert: false,
+      errors: {
+        surname: "",
+        name: "",
+        phone: "",
+        email: "",
+        msj: "",
+      },
     };
   }
 
   change = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
+    });
+    const { name, value } = e.target;
+    let errors = this.state.errors;
+
+    switch (name) {
+      case "surname":
+        errors.surname =
+          value.length < 5 ? "Surname must be 5 characters long!" : "";
+        break;
+      case "name":
+        errors.name = value.length < 3 ? "Name is not valid!" : "";
+        break;
+      case "phone":
+        console.log("p", parseInt(value).toString().length);
+        console.log("v", value.length);
+        errors.phone =
+          Number.isInteger(parseInt(value)) &&
+          (parseInt(value).toString().length === 9 ||
+            parseInt(value).toString().length === 10) &&
+          parseInt(value).toString().length === value.length
+            ? ""
+            : "Phone is not valid!";
+        break;
+      case "email":
+        errors.email = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
+          ? ""
+          : "Email is not valid!";
+        break;
+      case "msj":
+        errors.msj = value.length < 5 ? "Message is not valid!" : "";
+        break;
+      default:
+        break;
+    }
+
+    this.setState({ errors, [name]: value }, () => {
+      console.log("e", errors);
     });
   };
 
@@ -33,9 +78,16 @@ export default class Contact extends React.Component {
       this.state.name !== "" &&
       this.state.phone !== "" &&
       this.state.email !== "" &&
-      this.state.msj !== ""
+      this.state.msj !== "" &&
+      this.state.errors.surname === "" &&
+      this.state.errors.name === "" &&
+      this.state.errors.phone === "" &&
+      this.state.errors.email === "" &&
+      this.state.errors.msj === ""
     ) {
       this.setState({ showComponent: true });
+    } else {
+      this.setState({ alert: true });
     }
   }
 
@@ -58,9 +110,14 @@ export default class Contact extends React.Component {
                 <ModalNew />
               ) : (
                 <>
-                  <Alert variant="danger">
-                    You must complete all the fields.
-                  </Alert>
+                  {this.state.alert ? (
+                    <Alert variant="danger">
+                      You must complete all the fields.
+                    </Alert>
+                  ) : (
+                    ""
+                  )}
+
                   <Form.Group as={Row} controlId="formHorizontalSurname">
                     <Form.Label column sm={2}>
                       Surname:
@@ -72,6 +129,11 @@ export default class Contact extends React.Component {
                         onChange={this.change}
                       />
                     </Col>
+                    {this.state.errors.surname.length > 0 && (
+                      <span className="errorSurname">
+                        {this.state.errors.surname}
+                      </span>
+                    )}
                   </Form.Group>
 
                   <Form.Group as={Row} controlId="formHorizontalName">
@@ -80,11 +142,14 @@ export default class Contact extends React.Component {
                     </Form.Label>
                     <Col sm={10}>
                       <Form.Control
-                        name="namE"
-                        value={this.state.namE}
+                        name="name"
+                        value={this.state.name}
                         onChange={this.change}
                       />
                     </Col>
+                    {this.state.errors.name.length > 0 && (
+                      <span className="error">{this.state.errors.name}</span>
+                    )}
                   </Form.Group>
 
                   <Form.Group as={Row} controlId="formHorizontalPhone">
@@ -98,6 +163,9 @@ export default class Contact extends React.Component {
                         onChange={this.change}
                       />
                     </Col>
+                    {this.state.errors.phone.length > 0 && (
+                      <span className="error">{this.state.errors.phone}</span>
+                    )}
                   </Form.Group>
 
                   <Form.Group as={Row} controlId="formHorizontalEmail">
@@ -111,6 +179,9 @@ export default class Contact extends React.Component {
                         onChange={this.change}
                       />
                     </Col>
+                    {this.state.errors.email.length > 0 && (
+                      <span className="error">{this.state.errors.email}</span>
+                    )}
                   </Form.Group>
 
                   <Form.Group as={Row} controlId="formHorizontalMsj">
@@ -124,6 +195,9 @@ export default class Contact extends React.Component {
                         onChange={this.change}
                       ></textarea>
                     </Col>
+                    {this.state.errors.msj.length > 0 && (
+                      <span className="errorMsj">{this.state.errors.msj}</span>
+                    )}
                   </Form.Group>
 
                   <Button variant="success" onClick={this.active.bind(this)}>
