@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../Header";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -98,7 +97,6 @@ export default class Contact extends React.Component {
   render() {
     return (
       <div className="contact">
-        <Header />
         <Card>
           <Card.Header>
             {" "}

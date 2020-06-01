@@ -117,6 +117,30 @@ a {
     margin-left: 388px;
     color: red;
   }
+  .footer {
+    display: flex;
+    width: 100%;
+    background: lightblue;
+    padding: 15px;
+    font-weight: bold;
+    padding-right: 450px;
+    padding-left: 450px;
+    margin-top: 42px;
+  }
+  .pictures .carousel.slide .carousel-indicators {
+    margin-bottom: 8rem;
+  }
+  .footer .address {
+    padding-left: 150px;
+    padding-top: 20px;
+  }
+  .footer .phase {
+    padding-left: 150px;
+    padding-top: 20px;
+  }
+  .footer .phone {
+    padding-top: 20px;
+  }
 }
 
 @media screen and (max-width: 960px) {
@@ -188,5 +212,26 @@ a {
   .contact .card .card-body .form-group.row .errorMsj {
     margin-left: 278px;
     color: red;
+  }
+  .footer {
+    display: flex;
+    width: 100%;
+    background: lightblue;
+    padding: 15px;
+    font-weight: bold;
+    padding-right: 55px;
+    padding-left: 55px;
+    margin-top: 45px;
+  }
+  .footer .address {
+    padding-left: 58px;
+    padding-top: 20px;
+  }
+  .footer .phase {
+    padding-left: 58px;
+    padding-top: 20px;
+  }
+  .footer .phone {
+    padding-top: 20px;
   }
 }

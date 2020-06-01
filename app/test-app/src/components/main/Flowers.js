@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../Header";
 import Flower from "./Flower";
 import Table from "react-bootstrap/Table";
 import InputGroup from "react-bootstrap/InputGroup";
@@ -53,7 +52,6 @@ export default class Flowers extends React.Component {
         );*/
     return (
       <div className="flowers">
-        <Header />
         <br></br>
         {this.state.new ? (
           <div className="searchAdd">
