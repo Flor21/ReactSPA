@@ -36,11 +36,15 @@ export default class Contact extends React.Component {
 
     switch (name) {
       case "surname":
-        errors.surname =
-          value.length < 5 ? "Surname must be 5 characters long!" : "";
+        console.log("value", value);
+        errors.surname = /^[A-Za-z\s]+$/.test(value)
+          ? ""
+          : "The name field must not contain number or special characters";
         break;
       case "name":
-        errors.name = value.length < 3 ? "Name is not valid!" : "";
+        errors.name = /^[A-Za-z\s]+$/.test(value)
+          ? "The name field must not contain number or special characters"
+          : "";
         break;
       case "phone":
         console.log("p", parseInt(value).toString().length);

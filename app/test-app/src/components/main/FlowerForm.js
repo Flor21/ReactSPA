@@ -22,7 +22,41 @@ export default class Flowers extends React.Component {
   };
 
   newFlower = (e) => {
-    this.props.addFlower(this.state.name, this.state.price, this.state.stock);
+    if (
+      this.state.name !== "" &&
+      this.state.price !== "" &&
+      this.state.stock !== ""
+    ) {
+      const totalContentPrice = this.state.price.length;
+      const contentPrice = this.state.price.toString();
+      const price = contentPrice.substr(0, totalContentPrice - 1);
+
+      const totalContentStock = this.state.stock.length;
+      const contentStock = this.state.stock.toString();
+      const stock = contentStock.substr(0, totalContentStock);
+
+      const contentName = this.state.name;
+      const name = /^[A-Za-z\s]+$/.test(contentName);
+      if (name) {
+        if (contentPrice[totalContentPrice - 1] === "$") {
+          if (isNaN(price) || isNaN(stock)) {
+            alert("The price field and the stock field must be a number");
+          } else {
+            this.props.addFlower(
+              this.state.name,
+              this.state.price,
+              this.state.stock
+            );
+          }
+        } else {
+          alert("The price field must end with the $ sign");
+        }
+      } else {
+        alert("The name field must not contain number or special characters");
+      }
+    } else {
+      alert("All fields are required");
+    }
   };
 
   render() {
