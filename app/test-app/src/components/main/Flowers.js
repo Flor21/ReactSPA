@@ -10,17 +10,25 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import FlowerForm from "./FlowerForm";
 
+function searchingFor(term) {
+  return function (x) {
+    console.log(x.name.toLowerCase().includes(term.toLowerCase()) || !term);
+    return x.name.toLowerCase().includes(term.toLowerCase()) || !term;
+  };
+}
+
 export default class Flowers extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       flowers: listflowers,
       new: true,
+      term: "",
     };
   }
 
   updateSearch(event) {
-    this.setState({ flowers: event.target.value });
+    this.setState({ term: event.target.value });
   }
 
   delete(id) {
@@ -45,11 +53,7 @@ export default class Flowers extends React.Component {
   }
 
   render() {
-    /* let filterFlower = this.state.flowers.filter(
-            (flower) => {
-                return flower.name.toLowerCase().indexOf(this.state.flowers.toLowerCase()) !== -1;
-            }
-        );*/
+    let filterFlower = this.state.flowers.filter(searchingFor(this.state.term));
     return (
       <div className="flowers">
         <br></br>
@@ -74,6 +78,7 @@ export default class Flowers extends React.Component {
                         aria-label="Recipient's username"
                         aria-describedby="basic-addon2"
                         onChange={this.updateSearch.bind(this)}
+                        value={this.state.term}
                       />
                     </InputGroup>
                   </div>
@@ -94,7 +99,7 @@ export default class Flowers extends React.Component {
               <th></th>
             </tr>
           </thead>
-          {this.state.flowers.map((flower) => {
+          {filterFlower.map((flower) => {
             return (
               <Flower
                 flower={flower}

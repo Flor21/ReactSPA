@@ -43,8 +43,8 @@ export default class Contact extends React.Component {
         break;
       case "name":
         errors.name = /^[A-Za-z\s]+$/.test(value)
-          ? "The name field must not contain number or special characters"
-          : "";
+          ? ""
+          : "The name field must not contain number or special characters";
         break;
       case "phone":
         console.log("p", parseInt(value).toString().length);
@@ -150,7 +150,9 @@ export default class Contact extends React.Component {
                       />
                     </Col>
                     {this.state.errors.name.length > 0 && (
-                      <span className="error">{this.state.errors.name}</span>
+                      <span className="errorName">
+                        {this.state.errors.name}
+                      </span>
                     )}
                   </Form.Group>
 

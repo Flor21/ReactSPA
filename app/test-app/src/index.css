@@ -106,7 +106,11 @@ a {
     height: 100px;
   }
   .contact .card .card-body .form-group.row .errorSurname {
-    margin-left: 335px;
+    margin-left: 248px;
+    color: red;
+  }
+  .contact .card .card-body .form-group.row .errorName {
+    margin-left: 250px;
     color: red;
   }
   .contact .card .card-body .form-group.row .error {
@@ -141,6 +145,38 @@ a {
   .footer .phone {
     padding-top: 20px;
   }
+  .pictures .jasmine {
+    width: 45.2%;
+    height: auto;
+  }
+  .pictures .lavander {
+    width: 50.9%;
+    height: auto;
+  }
+  .pictures .lily {
+    width: 33.9%;
+    height: auto;
+  }
+  .pictures .pansy {
+    width: 33.9%;
+    height: auto;
+  }
+  .pictures .plumeria {
+    width: 51%;
+    height: auto;
+  }
+  .pictures .rose {
+    width: 29.2%;
+    height: auto;
+  }
+  .pictures .sunflower {
+    width: 27.1%;
+    height: auto;
+  }
+  .pictures .zinnia {
+    width: 33.9%;
+    height: auto;
+  }
 }
 
 @media screen and (max-width: 960px) {
@@ -173,6 +209,15 @@ a {
     background: lightblue;
     color: black;
   }
+  .flowers .new .row {
+    padding-left: 180px;
+  }
+  .flowers .new .row .col-md-auto .form-control {
+    margin-left: -70px;
+  }
+  .flowers .new .row .btn.btn-outline-success {
+    margin-left: 9px;
+  }
   .contact .card {
     text-align: center;
     border-color: white;
@@ -203,6 +248,12 @@ a {
   }
   .contact .card .card-body .form-group.row .errorSurname {
     margin-left: 220px;
+    padding-right: 120px;
+    color: red;
+  }
+  .contact .card .card-body .form-group.row .errorName {
+    margin-left: 220px;
+    padding-right: 120px;
     color: red;
   }
   .contact .card .card-body .form-group.row .error {
@@ -221,7 +272,7 @@ a {
     font-weight: bold;
     padding-right: 55px;
     padding-left: 55px;
-    margin-top: 45px;
+    margin-top: 235px;
   }
   .footer .address {
     padding-left: 58px;
@@ -233,5 +284,37 @@ a {
   }
   .footer .phone {
     padding-top: 20px;
+  }
+  .pictures .jasmine {
+    width: 65%;
+    height: auto;
+  }
+  .pictures .lavander {
+    width: 73%;
+    height: auto;
+  }
+  .pictures .lily {
+    width: 48.7%;
+    height: auto;
+  }
+  .pictures .pansy {
+    width: 48.7%;
+    height: auto;
+  }
+  .pictures .plumeria {
+    width: 73%;
+    height: auto;
+  }
+  .pictures .rose {
+    width: 42%;
+    height: auto;
+  }
+  .pictures .sunflower {
+    width: 39%;
+    height: auto;
+  }
+  .pictures .zinnia {
+    width: 48.7%;
+    height: auto;
   }
 }
