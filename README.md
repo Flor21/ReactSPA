@@ -1,5 +1,11 @@
 # ReactSPA
 
+**Requirements**
+
+- Docker
+- Docker compose version 1.26.0
+- Make
+
 **Steps**
 
 1. `$ git clone https://github.com/Flor21/ReactSPA.git`
