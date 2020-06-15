@@ -29,7 +29,495 @@ a {
   margin-bottom: 20px;
 }
 
-@media screen and (max-width: 1920px) {
+.main .pictures .carousel {
+  position: static;
+}
+
+/*Small Smartphones 360 x 740*/
+@media screen and (max-width: 480px) {
+  .header .container .row .title.col h1 {
+    margin-left: -90px;
+    margin-right: 55px;
+  }
+
+  .nav {
+    display: flex;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: lightblue;
+  }
+  .header .title {
+    padding: 50px 10px 7px 10px;
+  }
+  .logo img {
+    width: 90%;
+    height: auto;
+  }
+  .flowers .table {
+    text-align: center;
+    border-right-width: 110px;
+    border-left-width: 110px;
+  }
+  .flowers .search {
+    border-right-width: 150px;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-left-width: 550px;
+    border-color: white;
+  }
+  .flowers .search .mb-3 .input-group-append .btt {
+    background: lightblue;
+    color: black;
+  }
+  .flowers .new .row {
+    padding-left: 150px;
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  .flowers .new .row .col-md-auto .form-control {
+    margin-left: -80px;
+    margin-bottom: 5px;
+  }
+  .contact .card {
+    text-align: center;
+    border-color: white;
+    border-left-width: 15px;
+    border-right-width: 15px;
+  }
+  .contact .card .card-header {
+    background-color: rgb(187, 227, 240);
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .flowers .searchAdd {
+    margin-top: 180px;
+  }
+  .flowers
+    .searchAdd
+    .container
+    .justify-content-md-center.row
+    .col
+    .btn.btn-outline-info {
+    margin-bottom: 5px;
+  }
+  .flowers .searchAdd .container .justify-content-md-center.row .col-md-auto {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .new {
+    margin-left: -5px;
+    padding-left: 4px;
+    margin-right: -5px;
+  }
+  .new .row .col-md-auto {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .flowers .new .row .btn.btn-outline-success {
+    margin-right: -22px;
+  }
+  .flowers .table-responsive-sm {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .contact .card .card-body .form-group .col-sm-10 textarea {
+    width: 100%;
+    height: 100px;
+  }
+  .contact .card .card-body .form-group.row .errorSurname {
+    margin-left: 20px;
+    padding-right: 20px;
+    color: red;
+  }
+  .contact .card .card-body .form-group.row .errorName {
+    margin-left: 20px;
+    padding-right: 20px;
+    color: red;
+  }
+  .contact .card .card-body .form-group.row .error {
+    margin-left: 95px;
+    color: red;
+  }
+  .contact .card .card-body .form-group.row .errorMsj {
+    margin-left: 85px;
+    color: red;
+  }
+  .footer {
+    display: flex;
+    width: 100%;
+    background: lightblue;
+    font-weight: bold;
+    padding-right: 5px;
+    padding-left: 35px;
+    margin-top: 300px;
+    padding-bottom: 10px;
+  }
+  .footer img {
+    margin-top: 25px;
+    margin-left: -30px;
+  }
+  .footer .address {
+    padding-top: 20px;
+    font-size: 13px;
+  }
+  .footer .phase {
+    padding-top: 20px;
+    font-size: 13px;
+  }
+  .footer .phone {
+    padding-top: 20px;
+    font-size: 13px;
+  }
+  .main .pictures .carousel {
+    position: static;
+  }
+  .pictures .carousel.slide .carousel-indicators {
+    margin-bottom: 5rem;
+  }
+  .pictures .jasmine {
+    width: 65%;
+    height: auto;
+  }
+  .pictures .lavander {
+    width: 73%;
+    height: auto;
+  }
+  .pictures .lily {
+    width: 48.7%;
+    height: auto;
+  }
+  .pictures .pansy {
+    width: 48.7%;
+    height: auto;
+  }
+  .pictures .plumeria {
+    width: 73%;
+    height: auto;
+  }
+  .pictures .rose {
+    width: 42%;
+    height: auto;
+  }
+  .pictures .sunflower {
+    width: 39%;
+    height: auto;
+  }
+  .pictures .zinnia {
+    width: 48.7%;
+    height: auto;
+  }
+}
+
+/*Medium Smartphones iPad 768 x 1024*/
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .nav {
+    display: flex;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: lightblue;
+  }
+  .header .title {
+    padding: 50px 10px 7px 10px;
+  }
+  .logo img {
+    width: 90%;
+    height: auto;
+  }
+  .flowers .table {
+    text-align: center;
+    border-right-width: 110px;
+    border-left-width: 110px;
+  }
+  .flowers .search {
+    border-right-width: 150px;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-left-width: 550px;
+    border-color: white;
+  }
+  .flowers .search .mb-3 .input-group-append .btt {
+    background: lightblue;
+    color: black;
+  }
+  .flowers .new .row {
+    padding-left: 180px;
+  }
+  .flowers .new .row .col-md-auto .form-control {
+    margin-left: -70px;
+  }
+  .flowers .new .row .btn.btn-outline-success {
+    margin-left: 205px;
+    margin-top: 5px;
+    margin-right: -22px;
+  }
+  .flowers .table-responsive-sm {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+  .contact .card {
+    text-align: center;
+    border-color: white;
+    border-left-width: 15px;
+    border-right-width: 15px;
+  }
+  .contact .card .card-header {
+    background-color: rgb(187, 227, 240);
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .flowers .searchAdd {
+    margin-top: 180px;
+  }
+  .new {
+    margin-left: -5px;
+    padding-left: 4px;
+    margin-right: -5px;
+  }
+  .new .row .co-md-auto {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .contact .card .card-body .form-group .col-sm-10 textarea {
+    width: 100%;
+    height: 100px;
+  }
+  .contact .card .card-body .form-group.row .errorSurname {
+    margin-left: 205px;
+    color: red;
+  }
+  .contact .card .card-body .form-group.row .errorName {
+    margin-left: 205px;
+    color: red;
+  }
+  .contact .card .card-body .form-group.row .error {
+    margin-left: 358px;
+    color: red;
+  }
+  .contact .card .card-body .form-group.row .errorMsj {
+    margin-left: 350px;
+    color: red;
+  }
+  .footer {
+    display: flex;
+    width: 100%;
+    background: lightblue;
+    font-weight: bold;
+    padding-right: 5px;
+    padding-left: 35px;
+    margin-top: 378px;
+    padding-bottom: 10px;
+  }
+  .footer img {
+    margin-top: 25px;
+    margin-left: -20px;
+  }
+  .footer .address {
+    padding-top: 40px;
+    font-size: 15px;
+    margin-left: 50px;
+  }
+  .footer .phase {
+    padding-top: 40px;
+    font-size: 15px;
+    margin-left: 50px;
+  }
+  .footer .phone {
+    padding-top: 40px;
+    font-size: 15px;
+  }
+  .pictures .carousel.slide .carousel-indicators {
+    margin-bottom: 5rem;
+  }
+  .pictures .jasmine {
+    width: 65%;
+    height: auto;
+  }
+  .pictures .lavander {
+    width: 73%;
+    height: auto;
+  }
+  .pictures .lily {
+    width: 48.7%;
+    height: auto;
+  }
+  .pictures .pansy {
+    width: 48.7%;
+    height: auto;
+  }
+  .pictures .plumeria {
+    width: 73%;
+    height: auto;
+  }
+  .pictures .rose {
+    width: 42%;
+    height: auto;
+  }
+  .pictures .sunflower {
+    width: 39%;
+    height: auto;
+  }
+  .pictures .zinnia {
+    width: 48.7%;
+    height: auto;
+  }
+}
+
+/*Large Smartphones and small notebooks 800 x 1280*/
+@media screen and (min-width: 769px) and (max-width: 1199px) {
+  .nav {
+    display: flex;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: lightblue;
+  }
+  .header .title {
+    padding: 50px 10px 7px 10px;
+  }
+  .logo img {
+    width: 90%;
+    height: auto;
+  }
+  .flowers .table {
+    text-align: center;
+    border-right-width: 110px;
+    border-left-width: 110px;
+  }
+  .flowers .search {
+    border-right-width: 150px;
+    border-right-style: solid;
+    border-left-style: solid;
+    border-left-width: 550px;
+    border-color: white;
+  }
+  .flowers .search .mb-3 .input-group-append .btt {
+    background: lightblue;
+    color: black;
+  }
+  .flowers .new .row {
+    padding-left: 180px;
+  }
+  .flowers .new .row .col-md-auto .form-control {
+    margin-left: -70px;
+  }
+  .flowers .new .row .btn.btn-outline-success {
+    margin-left: 205px;
+    margin-top: 5px;
+    margin-right: -22px;
+  }
+  .flowers .table-responsive-sm {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .contact .card {
+    text-align: center;
+    border-color: white;
+    border-left-width: 15px;
+    border-right-width: 15px;
+  }
+  .contact .card .card-header {
+    background-color: rgb(187, 227, 240);
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .flowers .searchAdd {
+    margin-top: 180px;
+  }
+  .new {
+    margin-left: -5px;
+    padding-left: 4px;
+    margin-right: -5px;
+  }
+  .new .row .co-md-auto {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .contact .card .card-body .form-group .col-sm-10 textarea {
+    width: 100%;
+    height: 100px;
+  }
+  .contact .card .card-body .form-group.row .errorSurname {
+    margin-left: 205px;
+    color: red;
+  }
+  .contact .card .card-body .form-group.row .errorName {
+    margin-left: 205px;
+    color: red;
+  }
+  .contact .card .card-body .form-group.row .error {
+    margin-left: 358px;
+    color: red;
+  }
+  .contact .card .card-body .form-group.row .errorMsj {
+    margin-left: 350px;
+    color: red;
+  }
+  .footer {
+    display: flex;
+    width: 100%;
+    background: lightblue;
+    font-weight: bold;
+    padding-right: 5px;
+    padding-left: 35px;
+    margin-top: 618px;
+    padding-bottom: 10px;
+  }
+  .footer img {
+    margin-top: 25px;
+    margin-left: -20px;
+  }
+  .footer .address {
+    padding-top: 40px;
+    font-size: 15px;
+    margin-left: 50px;
+  }
+  .footer .phase {
+    padding-top: 40px;
+    font-size: 15px;
+    margin-left: 50px;
+  }
+  .footer .phone {
+    padding-top: 40px;
+    font-size: 15px;
+  }
+  .pictures .carousel.slide .carousel-indicators {
+    margin-bottom: 150px;
+  }
+  .pictures .jasmine {
+    width: 65%;
+    height: auto;
+  }
+  .pictures .lavander {
+    width: 73%;
+    height: auto;
+  }
+  .pictures .lily {
+    width: 48.7%;
+    height: auto;
+  }
+  .pictures .pansy {
+    width: 48.7%;
+    height: auto;
+  }
+  .pictures .plumeria {
+    width: 73%;
+    height: auto;
+  }
+  .pictures .rose {
+    width: 42%;
+    height: auto;
+  }
+  .pictures .sunflower {
+    width: 39%;
+    height: auto;
+  }
+  .pictures .zinnia {
+    width: 48.7%;
+    height: auto;
+  }
+}
+
+/*XLarges screens*/
+@media screen and (min-width: 1200px) {
   .nav {
     display: flex;
     margin-right: 200px;
@@ -65,8 +553,8 @@ a {
   .contact .card {
     text-align: center;
     border-color: white;
-    border-left-width: 550px;
-    border-right-width: 550px;
+    border-left-width: 500px;
+    border-right-width: 500px;
   }
   .contact .card .card-header {
     background-color: rgb(187, 227, 240);
@@ -95,6 +583,10 @@ a {
   .flowers .new .container .row .t button {
     text-align: right;
   }
+  .flowers .table-responsive-sm {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
   .new .row {
     padding-left: 500px;
   }
@@ -106,19 +598,19 @@ a {
     height: 100px;
   }
   .contact .card .card-body .form-group.row .errorSurname {
-    margin-left: 248px;
+    margin-left: 300px;
     color: red;
   }
   .contact .card .card-body .form-group.row .errorName {
-    margin-left: 250px;
+    margin-left: 300px;
     color: red;
   }
   .contact .card .card-body .form-group.row .error {
-    margin-left: 400px;
+    margin-left: 453px;
     color: red;
   }
   .contact .card .card-body .form-group.row .errorMsj {
-    margin-left: 388px;
+    margin-left: 440px;
     color: red;
   }
   .footer {
@@ -175,146 +667,6 @@ a {
   }
   .pictures .zinnia {
     width: 33.9%;
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 960px) {
-  .nav {
-    display: flex;
-    margin-right: 100px;
-    margin-left: 100px;
-    background-color: lightblue;
-  }
-  .header .title {
-    padding: 50px 10px 7px 10px;
-  }
-  .logo img {
-    width: 90%;
-    height: auto;
-  }
-  .flowers .table {
-    text-align: center;
-    border-right-width: 110px;
-    border-left-width: 110px;
-  }
-  .flowers .search {
-    border-right-width: 150px;
-    border-right-style: solid;
-    border-left-style: solid;
-    border-left-width: 550px;
-    border-color: white;
-  }
-  .flowers .search .mb-3 .input-group-append .btt {
-    background: lightblue;
-    color: black;
-  }
-  .flowers .new .row {
-    padding-left: 180px;
-  }
-  .flowers .new .row .col-md-auto .form-control {
-    margin-left: -70px;
-  }
-  .flowers .new .row .btn.btn-outline-success {
-    margin-left: 9px;
-  }
-  .contact .card {
-    text-align: center;
-    border-color: white;
-    border-left-width: 170px;
-    border-right-width: 170px;
-  }
-  .contact .card .card-header {
-    background-color: rgb(187, 227, 240);
-  }
-  .flowers .searchAdd {
-    margin-top: 180px;
-  }
-  .new {
-    margin-left: -5px;
-    padding-left: 4px;
-    margin-right: -5px;
-  }
-  .new .row .co-md-auto {
-    padding-left: 5px;
-    padding-right: 5px;
-  }
-  .new .row .btn.btn-outline-success {
-    margin-right: -22px;
-  }
-  .contact .card .card-body .form-group .col-sm-10 textarea {
-    width: 100%;
-    height: 100px;
-  }
-  .contact .card .card-body .form-group.row .errorSurname {
-    margin-left: 220px;
-    padding-right: 120px;
-    color: red;
-  }
-  .contact .card .card-body .form-group.row .errorName {
-    margin-left: 220px;
-    padding-right: 120px;
-    color: red;
-  }
-  .contact .card .card-body .form-group.row .error {
-    margin-left: 280px;
-    color: red;
-  }
-  .contact .card .card-body .form-group.row .errorMsj {
-    margin-left: 278px;
-    color: red;
-  }
-  .footer {
-    display: flex;
-    width: 100%;
-    background: lightblue;
-    padding: 15px;
-    font-weight: bold;
-    padding-right: 55px;
-    padding-left: 55px;
-    margin-top: 235px;
-  }
-  .footer .address {
-    padding-left: 58px;
-    padding-top: 20px;
-  }
-  .footer .phase {
-    padding-left: 58px;
-    padding-top: 20px;
-  }
-  .footer .phone {
-    padding-top: 20px;
-  }
-  .pictures .jasmine {
-    width: 65%;
-    height: auto;
-  }
-  .pictures .lavander {
-    width: 73%;
-    height: auto;
-  }
-  .pictures .lily {
-    width: 48.7%;
-    height: auto;
-  }
-  .pictures .pansy {
-    width: 48.7%;
-    height: auto;
-  }
-  .pictures .plumeria {
-    width: 73%;
-    height: auto;
-  }
-  .pictures .rose {
-    width: 42%;
-    height: auto;
-  }
-  .pictures .sunflower {
-    width: 39%;
-    height: auto;
-  }
-  .pictures .zinnia {
-    width: 48.7%;
     height: auto;
   }
 }
