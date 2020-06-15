@@ -12,7 +12,6 @@ import FlowerForm from "./FlowerForm";
 
 function searchingFor(term) {
   return function (x) {
-    console.log(x.name.toLowerCase().includes(term.toLowerCase()) || !term);
     return x.name.toLowerCase().includes(term.toLowerCase()) || !term;
   };
 }

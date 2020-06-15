@@ -36,7 +36,6 @@ export default class Contact extends React.Component {
 
     switch (name) {
       case "surname":
-        console.log("value", value);
         errors.surname = /^[A-Za-z\s]+$/.test(value)
           ? ""
           : "The name field must not contain number or special characters";
@@ -47,8 +46,6 @@ export default class Contact extends React.Component {
           : "The name field must not contain number or special characters";
         break;
       case "phone":
-        console.log("p", parseInt(value).toString().length);
-        console.log("v", value.length);
         errors.phone =
           Number.isInteger(parseInt(value)) &&
           (parseInt(value).toString().length === 9 ||
@@ -70,12 +67,11 @@ export default class Contact extends React.Component {
     }
 
     this.setState({ errors, [name]: value }, () => {
-      console.log("e", errors);
+      //console.log("e", errors);
     });
   };
 
   active() {
-    console.log("active", this.state);
     if (
       this.state.surname !== "" &&
       this.state.name !== "" &&
